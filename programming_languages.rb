@@ -1,17 +1,14 @@
 def reformat_languages(languages)
   # your code here
-  new_hash = {}
-  language_hash.each do |language_category, languages|
-    languages.each do |language, characteristics|
-      characteristics.each do |characteristic, value|
-        new_hash[language_category] = {
-          language = {characteristics:value}
-          }
-        if language_hash[:language_category] == :oo
-        elsif  language_hash[:language_category] == :functional
-        else puts "invalid option"
+ new_hash = {}
+  languages.each do |style,language|
+    language.each do |name,type|
+        if new_hash[name] == nil
+          new_hash[name] = type
+          new_hash[name][:style] = []
         end
-      end
+        new_hash[name][:style] << style
     end
   end
+  new_hash
 end
